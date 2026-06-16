@@ -1,0 +1,14 @@
+{
+    "name": "hdw/meeting-booking",
+    "description": "HDW Meeting Room Booking System for WordPress",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0+",
+    "autoload": {
+        "psr-4": {
+            "HDW\\MeetingBooking\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+}
