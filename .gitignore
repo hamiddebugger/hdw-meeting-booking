@@ -1,4 +1,23 @@
+# Dependencies
 /vendor/
 composer.lock
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# WordPress
+wp-config.php
+
+# Build artifacts
 *.log
+/node_modules/
+
+# Debug files
+debug-*.php
