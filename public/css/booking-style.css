@@ -1,1 +1,460 @@
-/* TODO: implement */
+/**
+ * HDW Meeting Booking Public Styles
+ */
+
+/* Container */
+.hdw-booking-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.hdw-form-title {
+    text-align: center;
+    color: #1d2327;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* Form */
+.hdw-booking-form {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Sections */
+.hdw-form-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.hdw-form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.hdw-section-title {
+    font-size: 16px;
+    color: #2271b1;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #2271b1;
+}
+
+/* Form Groups */
+.hdw-form-group {
+    margin-bottom: 18px;
+}
+
+.hdw-form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1d2327;
+}
+
+.hdw-required {
+    color: #d63638;
+}
+
+.hdw-optional {
+    font-weight: 400;
+    color: #646970;
+    font-size: 12px;
+}
+
+.hdw-form-group input,
+.hdw-form-group select,
+.hdw-form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #1d2327;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.hdw-form-group input:focus,
+.hdw-form-group select:focus,
+.hdw-form-group textarea:focus {
+    outline: none;
+    border-color: #2271b1;
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.15);
+}
+
+.hdw-form-group input::placeholder,
+.hdw-form-group textarea::placeholder {
+    color: #a7aaad;
+}
+
+.hdw-form-group input[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Form Row */
+.hdw-form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.hdw-form-row .hdw-form-group {
+    flex: 1;
+}
+
+/* Time Slots */
+.hdw-time-slots-wrapper {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.hdw-time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.hdw-time-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 8px;
+    border: 2px solid #c3c4c7;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+
+.hdw-time-slot:hover:not(.hdw-slot-occupied) {
+    border-color: #2271b1;
+    background: #f0f6fc;
+}
+
+.hdw-time-slot.hdw-slot-available {
+    border-color: #00a32a;
+    color: #00a32a;
+}
+
+.hdw-time-slot.hdw-slot-available:hover {
+    background: #edfaef;
+}
+
+.hdw-time-slot.hdw-slot-occupied {
+    border-color: #dcdcde;
+    background: #f6f7f7;
+    color: #a7aaad;
+    cursor: not-allowed;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.hdw-time-slot.hdw-slot-selected {
+    border-color: #2271b1;
+    background: #2271b1;
+    color: #fff;
+}
+
+.hdw-time-slot.hdw-slot-start-selected {
+    border-color: #2271b1;
+    background: #2271b1;
+    color: #fff;
+}
+
+.hdw-time-slot.hdw-slot-in-range {
+    border-color: #2271b1;
+    background: #c5d9ed;
+    color: #1d2327;
+}
+
+.hdw-slot-time {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.hdw-slot-status {
+    font-size: 10px;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.hdw-slot-occupied .hdw-slot-status {
+    font-size: 9px;
+}
+
+/* Loading State */
+.hdw-slots-loading {
+    text-align: center;
+    padding: 30px;
+    color: #646970;
+}
+
+.hdw-slots-loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c3c4c7;
+    border-top-color: #2271b1;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Submit Button */
+.hdw-form-actions {
+    margin-top: 25px;
+}
+
+.hdw-submit-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background: #2271b1;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.hdw-submit-btn:hover:not(:disabled) {
+    background: #135e96;
+}
+
+.hdw-submit-btn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.hdw-submit-btn:disabled {
+    background: #c3c4c7;
+    cursor: not-allowed;
+}
+
+/* Form Message */
+.hdw-form-message {
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-radius: 4px;
+    display: none;
+    font-size: 14px;
+}
+
+.hdw-form-message.hdw-message-success {
+    display: block;
+    background: #edfaef;
+    color: #00a32a;
+    border: 1px solid #00a32a;
+}
+
+.hdw-form-message.hdw-message-error {
+    display: block;
+    background: #fcf0f1;
+    color: #d63638;
+    border: 1px solid #d63638;
+}
+
+/* Modal */
+.hdw-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    animation: fadeIn 0.2s ease-in;
+}
+
+.hdw-modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.3s ease-out;
+}
+
+.hdw-modal-icon {
+    font-size: 48px;
+    color: #00a32a;
+    margin-bottom: 15px;
+}
+
+.hdw-modal-content h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #1d2327;
+}
+
+.hdw-modal-content p {
+    color: #646970;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.hdw-modal-close {
+    padding: 12px 35px;
+    background: #2271b1;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.hdw-modal-close:hover {
+    background: #135e96;
+}
+
+/* Instructions */
+.hdw-time-instructions {
+    font-size: 13px;
+    color: #646970;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f0f6fc;
+    border-radius: 4px;
+    border-right: 3px solid #2271b1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+    .hdw-booking-container {
+        padding: 10px;
+    }
+
+    .hdw-booking-form {
+        padding: 15px;
+    }
+
+    .hdw-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .hdw-time-slots {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hdw-modal-content {
+        padding: 25px 20px;
+    }
+}
+
+/* ── Time-point picker ─────────────────────────────────────────────── */
+.hdw-time-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.hdw-time-point {
+    padding: 8px 12px;
+    border: 2px solid #00a32a;
+    border-radius: 6px;
+    background: #fff;
+    color: #00a32a;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    min-width: 60px;
+    text-align: center;
+}
+
+.hdw-time-point:hover:not(:disabled) {
+    background: #edfaef;
+    border-color: #00a32a;
+}
+
+/* Start selected */
+.hdw-time-point.hdw-tp-start {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+
+/* In-range */
+.hdw-time-point.hdw-tp-in-range {
+    background: #c5d9ed;
+    border-color: #2271b1;
+    color: #1d2327;
+}
+
+/* End selected */
+.hdw-time-point.hdw-tp-end {
+    background: #135e96;
+    border-color: #135e96;
+    color: #fff;
+}
+
+/* Blocked (all slots at this time are occupied) */
+.hdw-time-point.hdw-tp-blocked,
+.hdw-time-point:disabled {
+    background: #f6f7f7;
+    border-color: #dcdcde;
+    color: #a7aaad;
+    cursor: not-allowed;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Selection label */
+.hdw-selection-label {
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 22px;
+    margin: 6px 0 4px;
+}
+
+.hdw-selection-label.hdw-selection-partial {
+    color: #2271b1;
+}
+
+.hdw-selection-label.hdw-selection-complete {
+    color: #00a32a;
+}

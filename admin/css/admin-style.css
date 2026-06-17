@@ -1,1 +1,349 @@
-/* TODO: implement */
+/**
+ * HDW Meeting Booking Admin Styles
+ */
+
+/* Layout */
+.hdw-admin-wrap {
+    max-width: 1200px;
+}
+
+.hdw-admin-wrap h1 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2271b1;
+}
+
+/* Filter Bar */
+.hdw-filter-bar {
+    background: #fff;
+    padding: 15px 20px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.hdw-filter-bar form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.hdw-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hdw-filter-group label {
+    font-weight: 600;
+    font-size: 12px;
+    color: #1d2327;
+}
+
+.hdw-filter-group input,
+.hdw-filter-group select {
+    min-width: 150px;
+}
+
+.hdw-filter-actions {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+/* Statistics Cards */
+.hdw-stats-cards {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.hdw-stat-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px 25px;
+    text-align: center;
+    min-width: 120px;
+    flex: 1;
+}
+
+.hdw-stat-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2271b1;
+}
+
+.hdw-stat-label {
+    display: block;
+    font-size: 12px;
+    color: #646970;
+    margin-top: 5px;
+}
+
+.hdw-stat-pending .hdw-stat-number {
+    color: #dba617;
+}
+
+.hdw-stat-approved .hdw-stat-number {
+    color: #00a32a;
+}
+
+.hdw-stat-rejected .hdw-stat-number {
+    color: #d63638;
+}
+
+/* Table */
+.hdw-table-container {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.hdw-reservations-table {
+    border: none;
+}
+
+.hdw-reservations-table th {
+    background: #f0f0f1;
+    font-weight: 600;
+    padding: 12px;
+}
+
+.hdw-reservations-table td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.hdw-no-data {
+    text-align: center;
+    padding: 40px;
+    color: #646970;
+}
+
+.hdw-email {
+    font-size: 11px;
+    color: #646970;
+}
+
+.hdw-time-range {
+    font-size: 12px;
+    color: #2271b1;
+    font-weight: 500;
+}
+
+/* Status Badges */
+.hdw-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hdw-status-pending {
+    background: #fcf9e8;
+    color: #946e00;
+}
+
+.hdw-status-approved {
+    background: #edfaef;
+    color: #00a32a;
+}
+
+.hdw-status-rejected {
+    background: #fcf0f1;
+    color: #d63638;
+}
+
+/* Room Badge */
+.hdw-room-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    background: #f0f6fc;
+    color: #2271b1;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.hdw-room-unassigned {
+    background: #fcf0f1;
+    color: #d63638;
+}
+
+/* Action Buttons */
+.hdw-action-buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.hdw-btn-approve {
+    background: #00a32a !important;
+    border-color: #00a32a !important;
+    color: #fff !important;
+}
+
+.hdw-btn-approve:hover {
+    background: #008a20 !important;
+    border-color: #008a20 !important;
+}
+
+.hdw-btn-reject {
+    background: #d63638 !important;
+    border-color: #d63638 !important;
+    color: #fff !important;
+}
+
+.hdw-btn-reject:hover {
+    background: #b32d2e !important;
+    border-color: #b32d2e !important;
+}
+
+.hdw-btn-pending {
+    background: #dba617 !important;
+    border-color: #dba617 !important;
+    color: #fff !important;
+}
+
+.hdw-btn-pending:hover {
+    background: #b88c00 !important;
+    border-color: #b88c00 !important;
+}
+
+.hdw-action-done {
+    color: #646970;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Pagination */
+.hdw-pagination {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.hdw-page-info {
+    color: #646970;
+}
+
+/* Settings */
+.hdw-settings-container {
+    max-width: 800px;
+}
+
+.hdw-settings-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.hdw-settings-card h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+/* Report */
+.hdw-report-summary {
+    margin-bottom: 20px;
+}
+
+.hdw-report-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.hdw-report-card h3 {
+    margin-top: 0;
+}
+
+.hdw-report-metric {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.hdw-report-metric:last-child {
+    border-bottom: none;
+}
+
+.hdw-metric-label {
+    font-weight: 500;
+    color: #1d2327;
+}
+
+.hdw-metric-value {
+    font-weight: 600;
+    color: #2271b1;
+}
+
+.hdw-highlight {
+    font-size: 18px;
+    color: #2271b1;
+}
+
+.hdw-report-ok {
+    border-left: 4px solid #00a32a;
+}
+
+.hdw-report-warning {
+    border-left: 4px solid #dba617;
+}
+
+.hdw-report-status {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f1;
+}
+
+.hdw-report-info {
+    background: #f0f6fc;
+    border-left: 4px solid #2271b1;
+}
+
+.hdw-report-info p {
+    color: #1d2327;
+    line-height: 1.6;
+}
+
+/* Loading State */
+.hdw-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .hdw-filter-bar form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hdw-filter-group input,
+    .hdw-filter-group select {
+        width: 100%;
+    }
+
+    .hdw-stats-cards {
+        flex-wrap: wrap;
+    }
+
+    .hdw-action-buttons {
+        flex-direction: column;
+    }
+}
