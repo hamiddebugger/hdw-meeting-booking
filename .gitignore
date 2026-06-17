@@ -1,7 +1,3 @@
-# Dependencies
-/vendor/
-composer.lock
-
 # OS files
 .DS_Store
 Thumbs.db
@@ -12,8 +8,6 @@ Thumbs.db
 *.swp
 *.swo
 
-# WordPress
-wp-config.php
 
 # Build artifacts
 *.log

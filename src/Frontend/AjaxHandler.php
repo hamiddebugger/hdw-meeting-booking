@@ -53,7 +53,7 @@ class AjaxHandler
         $slots = $this->reservationManager->getAvailableTimeSlots($date);
 
         Security::sendJsonSuccess([
-            'date'  => $date,
+            'date' => $date,
             'slots' => $slots,
         ]);
     }
@@ -68,23 +68,23 @@ class AjaxHandler
         }
 
         $data = [
-            'full_name'     => isset($_POST['full_name']) ? sanitize_text_field($_POST['full_name']) : '',
-            'mobile'        => isset($_POST['mobile']) ? sanitize_text_field($_POST['mobile']) : '',
-            'email'         => isset($_POST['email']) ? sanitize_email($_POST['email']) : '',
+            'full_name' => isset($_POST['full_name']) ? sanitize_text_field($_POST['full_name']) : '',
+            'mobile' => isset($_POST['mobile']) ? sanitize_text_field($_POST['mobile']) : '',
+            'email' => isset($_POST['email']) ? sanitize_email($_POST['email']) : '',
             'meeting_title' => isset($_POST['meeting_title']) ? sanitize_text_field($_POST['meeting_title']) : '',
-            'meeting_date'  => isset($_POST['meeting_date']) ? sanitize_text_field($_POST['meeting_date']) : '',
-            'start_time'    => isset($_POST['start_time']) ? sanitize_text_field($_POST['start_time']) : '',
-            'end_time'      => isset($_POST['end_time']) ? sanitize_text_field($_POST['end_time']) : '',
-            'description'   => isset($_POST['description']) ? sanitize_textarea_field($_POST['description']) : '',
+            'meeting_date' => isset($_POST['meeting_date']) ? sanitize_text_field($_POST['meeting_date']) : '',
+            'start_time' => isset($_POST['start_time']) ? sanitize_text_field($_POST['start_time']) : '',
+            'end_time' => isset($_POST['end_time']) ? sanitize_text_field($_POST['end_time']) : '',
+            'description' => isset($_POST['description']) ? sanitize_textarea_field($_POST['description']) : '',
         ];
 
         $result = $this->reservationManager->createReservation($data);
 
         if ($result['success']) {
             Security::sendJsonSuccess([
-                'message'        => $result['message'],
+                'message' => $result['message'],
                 'reservation_id' => $result['reservation_id'],
-                'room_id'        => $result['room_id'],
+                'room_id' => $result['room_id'],
             ]);
         } else {
             Security::sendJsonError($result['message']);
