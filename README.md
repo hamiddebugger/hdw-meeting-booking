@@ -12,6 +12,27 @@ A professional WordPress plugin for managing meeting room reservations with conf
 - **Room Management**: Dynamically adjust the number of meeting rooms
 - **Allocation Report**: Visual analysis of room capacity vs. demand
 
+
+## Overall Plan — Phases and Commits
+```
+Phase 1 — chore: project scaffold & architecture
+Phase 2 — chore: add composer autoload & gitignore  
+Phase 3 — feat: implement database schema & activator
+Phase 4 — feat: implement domain models
+Phase 5 — feat: implement database repositories
+Phase 6 — feat: implement core services (conflict detection, room allocation)
+Phase 7 — feat: implement interval partitioning algorithm
+Phase 8 — feat: implement reservation manager
+Phase 9 — feat: implement admin panel (menu, dashboard, settings)
+Phase 10 — feat: implement public booking form & shortcode
+Phase 11 — feat: implement AJAX handlers
+Phase 12 — style: add admin & public CSS
+Phase 13 — fix: race condition with DB transaction on reservation create
+Phase 14 — fix: normalize HH:MM:SS time format from MySQL
+Phase 15 — docs: add README
+```
+
+
 ## Architecture
 
 ```
